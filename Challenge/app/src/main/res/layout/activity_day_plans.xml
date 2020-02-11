@@ -1,0 +1,928 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityDayPlans">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/shadow_toolbar"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:titleTextColor="@color/White" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/suggestedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Suggested"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/threeDaysLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/suggestedText"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shadow_layout"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:text="Three Days in Paris"
+                    android:textColor="@color/titleColor"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="5dp"
+                    android:text="7 sights"
+                    android:textSize="14sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewThreeDaysInParis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
+
+                    <ImageView
+                        android:id="@+id/iconInfoThreeDaysInParis"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_info" />
+
+                    <TextView
+                        android:id="@+id/infoTextThreeDaysInParis"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_toStartOf="@+id/dropDownArrowThreeDaysInParis"
+                        android:layout_toEndOf="@+id/iconInfoThreeDaysInParis"
+                        android:maxLines="2"
+                        android:text="Some sights may not be open on Mon &amp; Wed. Please check opening hours."
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/dropDownArrowThreeDaysInParis"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_keyboard_arrow_down"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/dropUpArrowThreeDaysInParis"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_keyboard_arrow_up"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/parisDisneyLandRelative"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/CardViewColor"
+                    android:padding="10dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/firstLinearDisneyLand"
+                        android:layout_width="28dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/numberOneDisneyLand"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/number_one" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="3dp"
+                            android:background="@color/LineColor" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/titleDisneyLand"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_toEndOf="@+id/firstLinearDisneyLand"
+                        android:text="Paris Disney Land"
+                        android:textColor="@color/Black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/titleDisneyLand"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toEndOf="@id/firstLinearDisneyLand"
+                        android:drawableStart="@drawable/ic_access_time"
+                        android:drawablePadding="5dp"
+                        android:text="Visitors typically stay 35 min"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/sieneRiverRelative"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/White"
+                    android:padding="10dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/secondLinearSieneRiver"
+                        android:layout_width="28dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageWalks"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="15dp"
+                            android:src="@drawable/walk" />
+
+                        <ImageView
+                            android:id="@+id/numberTwoSieneRiver"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/number_two" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="70dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="3dp"
+                            android:background="@color/LineColor" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/duringTimeWalks"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_toEndOf="@id/secondLinearSieneRiver"
+                        android:text="18 min by foot"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/titleSieneRiver"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/duringTimeWalks"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@+id/secondLinearSieneRiver"
+                        android:text="Siene River"
+                        android:textColor="@color/Black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/openUntilTextSiene"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/titleSieneRiver"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toEndOf="@id/secondLinearSieneRiver"
+                        android:text="Open until 16:00"
+                        android:textColor="@color/openDescriptionColor"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/openUntilTextSiene"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toEndOf="@id/secondLinearSieneRiver"
+                        android:drawableStart="@drawable/ic_access_time"
+                        android:drawablePadding="5dp"
+                        android:text="Visitors typically wait 15 min"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/montmartreRelativve"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/CardViewColor"
+                    android:padding="10dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/thirdLinearMontmartre"
+                        android:layout_width="28dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/peopleWalkings"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="15dp"
+                            android:src="@drawable/walk" />
+
+                        <ImageView
+                            android:id="@+id/numberThreeMontmartre"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/number_three" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="3dp"
+                            android:background="@color/LineColor" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/walkingByFootDurations"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_toEndOf="@id/thirdLinearMontmartre"
+                        android:text="20 min by foot"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/titleMontmartre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/walkingByFootDurations"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@+id/thirdLinearMontmartre"
+                        android:text="Montmartre"
+                        android:textColor="@color/Black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/titleMontmartre"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toEndOf="@id/thirdLinearMontmartre"
+                        android:drawableStart="@drawable/ic_access_time"
+                        android:drawablePadding="5dp"
+                        android:text="Visitors typically wait 45 min"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mainSightsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/threeDaysLayout"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shadow_layout"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:text="Main Sights"
+                    android:textColor="@color/titleColor"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="5dp"
+                    android:text="3 sights"
+                    android:textSize="14sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewMainSights"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
+
+                    <ImageView
+                        android:id="@+id/iconInfoMainSights"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_info" />
+
+                    <TextView
+                        android:id="@+id/infoTextMainSights"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_toStartOf="@+id/dropDownArrowMainSights"
+                        android:layout_toEndOf="@+id/iconInfoMainSights"
+                        android:maxLines="2"
+                        android:text="Some sights may not be open on Mon &amp; Wed. Please check opening hours."
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/dropDownArrowMainSights"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_keyboard_arrow_down"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/dropUpArrowMainSights"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_keyboard_arrow_up"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/eiffelTowerRelative"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/CardViewColor"
+                    android:padding="10dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/firstLinear"
+                        android:layout_width="28dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/numberOne"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/number_one" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="3dp"
+                            android:background="@color/LineColor" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/titleEiffelTower"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_toEndOf="@+id/firstLinear"
+                        android:text="Eiffel Tower"
+                        android:textColor="@color/Black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/titleEiffelTower"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toEndOf="@id/firstLinear"
+                        android:drawableStart="@drawable/ic_access_time"
+                        android:drawablePadding="5dp"
+                        android:text="Visitors typically stay 45 min"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/ArcDeTriompheRelative"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/White"
+                    android:padding="10dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/secondLinear"
+                        android:layout_width="28dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageWalk"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="15dp"
+                            android:src="@drawable/walk" />
+
+                        <ImageView
+                            android:id="@+id/numberTwo"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/number_two" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="70dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="3dp"
+                            android:background="@color/LineColor" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/duringTimeWalk"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_toEndOf="@id/secondLinear"
+                        android:text="9 min by foot"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/titleArcDeTriomphe"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/duringTimeWalk"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@+id/secondLinear"
+                        android:text="The Arc de Triomphe"
+                        android:textColor="@color/Black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/openUntilText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/titleArcDeTriomphe"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toEndOf="@id/secondLinear"
+                        android:text="Open until 9:00"
+                        android:textColor="@color/openDescriptionColor"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/openUntilText"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toEndOf="@id/secondLinear"
+                        android:drawableStart="@drawable/ic_access_time"
+                        android:drawablePadding="5dp"
+                        android:text="Visitors typically wait 15 min"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/louvreRelative"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/CardViewColor"
+                    android:padding="10dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/thirdLinear"
+                        android:layout_width="28dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/peopleWalking"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="15dp"
+                            android:src="@drawable/walk" />
+
+                        <ImageView
+                            android:id="@+id/numberThree"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/number_three" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="3dp"
+                            android:background="@color/LineColor" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/walkingByFootDuration"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_toEndOf="@id/thirdLinear"
+                        android:text="12 min by foot"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/titleLouvre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/walkingByFootDuration"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@+id/thirdLinear"
+                        android:text="Louvre"
+                        android:textColor="@color/Black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/titleLouvre"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toEndOf="@id/thirdLinear"
+                        android:drawableStart="@drawable/ic_access_time"
+                        android:drawablePadding="5dp"
+                        android:text="Visitors typically wait 5 min"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cityCenterHighlightsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mainSightsLayout"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shadow_layout"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:text="City Center Highlights"
+                    android:textColor="@color/titleColor"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="5dp"
+                    android:text="4 sights"
+                    android:textSize="14sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewCityCenterHighlights"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
+
+                    <ImageView
+                        android:id="@+id/iconInfoCityCenterHighlights"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_info" />
+
+                    <TextView
+                        android:id="@+id/infoTextCityCenterHighlights"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_toStartOf="@+id/dropDownArrowCityCenterHighlights"
+                        android:layout_toEndOf="@+id/iconInfoCityCenterHighlights"
+                        android:maxLines="2"
+                        android:text="Some sights may not be open on Mon &amp; Wed. Please check opening hours."
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/dropDownArrowCityCenterHighlights"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_keyboard_arrow_down"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/dropUpArrowCityCenterHighlights"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_keyboard_arrow_up"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/castleVersaillesRelative"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/CardViewColor"
+                    android:padding="10dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/firstLinearCastleVersailles"
+                        android:layout_width="28dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/numberOneIcon"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/number_one" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="3dp"
+                            android:background="@color/LineColor" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/titleCastleVersailles"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_toEndOf="@+id/firstLinearCastleVersailles"
+                        android:text="Versailles Castle"
+                        android:textColor="@color/Black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/titleCastleVersailles"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toEndOf="@id/firstLinearCastleVersailles"
+                        android:drawableStart="@drawable/ic_access_time"
+                        android:drawablePadding="5dp"
+                        android:text="Visitors typically stay 55 min"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/orsayMuseumRelative"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/White"
+                    android:padding="10dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/secondLinearOrsayMuseum"
+                        android:layout_width="28dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageCar"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="15dp"
+                            android:src="@drawable/car" />
+
+                        <ImageView
+                            android:id="@+id/numberTwoIcon"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/number_two" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="70dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="3dp"
+                            android:background="@color/LineColor" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/duringTimeCar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_toEndOf="@id/secondLinearOrsayMuseum"
+                        android:text="15 min by car"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/titleOrsayMuseum"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/duringTimeCar"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@+id/secondLinearOrsayMuseum"
+                        android:text="Orsay Museum"
+                        android:textColor="@color/Black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/openUntilTexts"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/titleOrsayMuseum"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toEndOf="@id/secondLinearOrsayMuseum"
+                        android:text="Open until 10:00"
+                        android:textColor="@color/openDescriptionColor"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/openUntilTexts"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toEndOf="@id/secondLinearOrsayMuseum"
+                        android:drawableStart="@drawable/ic_access_time"
+                        android:drawablePadding="5dp"
+                        android:text="Visitors typically wait 25 min"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/saintMaloRelative"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/CardViewColor"
+                    android:padding="10dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/thirdLinearSaintMalo"
+                        android:layout_width="28dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageCars"
+                            android:layout_width="24dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="15dp"
+                            android:src="@drawable/car" />
+
+                        <ImageView
+                            android:id="@+id/numberThreeIcon"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/number_three" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="3dp"
+                            android:background="@color/LineColor" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/durationByCar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_toEndOf="@id/thirdLinearSaintMalo"
+                        android:text="25 min by car"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/titleSaintMalo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/durationByCar"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@+id/thirdLinearSaintMalo"
+                        android:text="Saint Malo"
+                        android:textColor="@color/Black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/titleSaintMalo"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toEndOf="@id/thirdLinearSaintMalo"
+                        android:drawableStart="@drawable/ic_access_time"
+                        android:drawablePadding="5dp"
+                        android:text="Visitors typically wait 15 min"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

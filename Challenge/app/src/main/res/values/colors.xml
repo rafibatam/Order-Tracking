@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="toolbarColor">#673AB7</color>
+    <color name="White">#FFFFFF</color>
+    <color name="Black">#000000</color>
+    <color name="CardViewColor">#FAFAFB</color>
+    <color name="LineColor">#E0E1E1</color>
+    <color name="openDescriptionColor">#FE835C</color>
+    <color name="titleColor">#212220</color>
+    <color name="statusBarColor">#512DA8</color>
+</resources>
